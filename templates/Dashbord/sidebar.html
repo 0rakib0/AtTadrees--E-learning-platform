@@ -1,0 +1,146 @@
+{% load static %}
+<div class="sidebar" id="sidebar">
+   {% if user.user_type == 'admin' %}
+    <div class="sidebar-inner slimscroll">
+       <div id="sidebar-menu" class="sidebar-menu">
+          <ul>
+             <li class="menu-title">
+                <span>Main Menu</span>
+             </li>
+             <li>
+                <a href="{% url 'hod:hod_dashbord' %}"><span>Dashboard</span><span class="menu-arrow"></span></a>
+             </li>
+             <li class="submenu">
+                <a href="#"><i class="fas fa-user-graduate"></i> <span>Advisers</span> <span class="menu-arrow"></span></a>
+                <ul>
+                   <li><a href="{% url 'hod:add_adviser' %}">Add Adviser</a></li>
+                   <li><a href="{% url 'hod:view_adviser' %}">View Adviser</a></li>
+                </ul>
+             </li>
+             <li class="submenu">
+                <a href="#"><i class="fas fa-chalkboard-teacher"></i> <span> Teachers</span> <span class="menu-arrow"></span></a>
+                <ul>
+                   <li><a href="{% url 'hod:add_teacher' %}">Teacher Add</a></li>
+                   <li><a href="{% url 'hod:view_teacher' %}">View Teacher</a></li>
+                </ul>
+             </li>
+             <li>
+               <a href="{% url 'hod:student_list' %}"><i class="fas fa-chalkboard-teacher"></i><span>Student List</span><span class="menu-arrow"></span></a>
+            </li>
+             <li class="submenu">
+                <a href="#"><i class="fas fa-building"></i> <span> Course</span> <span class="menu-arrow"></span></a>
+                <ul>
+                   <li><a href="{% url 'add_category' %}">Add Category</a></li>
+                   <li><a href="{% url 'view_category' %}">View Category</a></li>
+                   <li><a href="{% url 'add_language' %}">Add Language</a></li>
+                   <li><a href="{% url 'view_language' %}">View Language</a></li>
+                   <li><a href="{% url 'add_course' %}">Add Course</a></li>
+                   <li><a href="{% url 'view_course' %}">View Course</a></li>
+                   <li><a href="{% url 'view_whats_learn' %}">Whats Learn From Course</a></li>
+                   <li><a href="{% url 'view_course_requirment' %}">Course Requirment</a></li>
+                   
+                </ul>
+             </li>
+
+            <li class="submenu">
+               <a href="#"><i class="fa fa-video"></i> <span> Lesson&Video</span> <span class="menu-arrow"></span></a>
+               <ul>
+                  <li><a href="{% url 'add_lesson' %}">Add Lesson</a></li>
+                  <li><a href="{% url 'view_lesson' %}">View Lesson</a></li>
+                  <li><a href="{% url 'add_video' %}">Add Video</a></li>
+                  <li><a href="{% url 'view_video' %}">View Video</a></li>
+               </ul>
+            </li>
+
+            <li class="submenu">
+               <a href="#"><i class="fa fa-book"></i> <span> Books</span> <span class="menu-arrow"></span></a>
+               <ul>
+                  <li><a href="{% url 'hod:add_book' %}">Add Book</a></li>
+                  <li><a href="{% url 'hod:view_book' %}">View Book</a></li>
+                  <li><a href="{% url 'hod:order_list' %}">Book Order List</a></li>
+               </ul>
+            </li>
+             <li class="submenu">
+                <a href="#"><i class="fas fa-book-reader"></i> <span> Subjects</span> <span class="menu-arrow"></span></a>
+                <ul>
+                   <li><a href="{% url 'hod:add_subject' %}">Add Subjec</a></li>
+                   <li><a href="{% url 'hod:view_subject' %}">View Subject</a></li>
+                </ul>
+             </li>
+             <li class="">
+               <a href="{% url 'hod:view_contactus' %}"><i class="fas fa-book-reader"></i> <span>Student Messege</span></a>
+            </li>
+          </ul>
+       </div>
+    </div>
+    {% elif user.user_type == 'teacher' %}
+    <div class="sidebar-inner slimscroll">
+      <div id="sidebar-menu" class="sidebar-menu">
+         <ul>
+            <li class="menu-title">
+               <span>Main Menu</span>
+            </li>
+            <li>
+               <a href="{% url 'hod:hod_dashbord' %}"><span>Dashboard</span><span class="menu-arrow"></span></a>
+            </li>
+            <li class="submenu">
+               <a href="#"><i class="fas fa-building"></i> <span> Course</span> <span class="menu-arrow"></span></a>
+               <ul>
+                  <li><a href="{% url 'add_category' %}">Add Category</a></li>
+                  <li><a href="{% url 'view_category' %}">View Category</a></li>
+                  <li><a href="{% url 'add_language' %}">Add Language</a></li>
+                  <li><a href="{% url 'view_language' %}">View Language</a></li>
+                  <li><a href="{% url 'add_course' %}">Add Course</a></li>
+                  <li><a href="{% url 'Teacher_ap:teacher_view_course' %}">View Course</a></li>
+                  <li><a href="{% url 'view_whats_learn' %}">Whats Learn From Course</a></li>
+                  <li><a href="{% url 'view_course_requirment' %}">Course Requirment</a></li>
+                  
+               </ul>
+            </li>
+            <li class="submenu">
+               <a href="#"><i class="fa fa-video"></i> <span> Lesson&Video</span> <span class="menu-arrow"></span></a>
+               <ul>
+                  <li><a href="{% url 'add_lesson' %}">Add Lesson</a></li>
+                  <li><a href="{% url 'view_lesson' %}">View Lesson</a></li>
+                  <li><a href="{% url 'add_video' %}">Add Video</a></li>
+                  <li><a href="{% url 'hod:view_book' %}">View Video</a></li>
+               </ul>
+            </li>
+            <li>
+              <a href="{% url 'hod:student_list' %}"><i class="fas fa-chalkboard-teacher"></i><span>Student List</span><span class="menu-arrow"></span></a>
+           </li>
+           <li class="submenu">
+               <a href="#"><i class="fa fa-book"></i> <span> Books</span> <span class="menu-arrow"></span></a>
+               <ul>
+                  <li><a href="{% url 'hod:add_book' %}">Add Book</a></li>
+                  <li><a href="{% url 'Teacher_ap:teacher_view_book' %}">View Book</a></li>
+                  <li><a href="{% url 'hod:order_list' %}">Book Order List</a></li>
+               </ul>
+          </li>
+
+            <!-- <li class="submenu">
+               <a href="#"><i class="fa fa-comments"></i> <span> Quize</span> <span class="menu-arrow"></span></a>
+               <ul>
+                  <li><a href="add-department.html">Add Quize</a></li>
+                  <li><a href="edit-department.html">Quize Answer</a></li>
+               </ul>
+            </li> -->
+            <!-- <li class="submenu">
+               <a href="#"><i class="fa fa-users"></i> <span> Result</span> <span class="menu-arrow"></span></a>
+               <ul>
+                  <li><a href="add-department.html">Add Result</a></li>
+                  <li><a href="edit-department.html">View Result</a></li>
+               </ul>
+            </li> -->
+            <li class="submenu">
+               <a href="#"><i class="fas fa-book-reader"></i> <span> Subjects</span> <span class="menu-arrow"></span></a>
+               <ul>
+                  <li><a href="{% url 'hod:add_subject' %}">Add Subjec</a></li>
+                  <li><a href="{% url 'hod:view_subject' %}">View Subject</a></li>
+               </ul>
+            </li>
+         </ul>
+      </div>
+   </div>
+   {% endif %}
+ </div>

@@ -1,0 +1,39 @@
+{% extends "Student/base.html" %}
+{% load static %}
+{% block body %}
+
+
+<section class="courses">
+
+    <h1 class="heading">My Book</h1>
+ 
+    <div class="box-container">
+ 
+
+    {% for i in my_course %}
+       <div class="box">
+          <div class="tutor">
+             
+             <div class="info">
+                <h3>Pyment Date:</h3>
+                <span>{{i.date}}</span>
+             </div>
+          </div>
+          <div class="thumb">
+             <img src="/media/{{i.book.picture}}" alt="course_image">
+             {% if i.delivery_status == True %}
+             <span class="badge badge-success">Delivered</span>
+             {% else %}
+             <span class="badge badge-primary">Pending</span>
+             {% endif %}
+          </div>
+
+          <a href="{% url 'single_book' id=i.id %}"><h3 class="title">{{i.book.name}}</h3></a>
+       </div>
+    {% endfor %}
+ 
+    </div>
+ 
+ </section>
+
+{% endblock %}

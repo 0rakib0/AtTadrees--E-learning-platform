@@ -1,0 +1,79 @@
+{% extends "Dashbord/base.html" %}
+{% load static %}
+{% block tile %}
+  Teachers List
+{% endblock tile %}
+
+{% block body %}
+<div class="page-wrapper">
+    <div class="content container-fluid">
+
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title">Whats Learn From Course</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a
+                                href="{% url 'hod:hod_dashbord' %}">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Whats Learn From Course</li>
+                    </ul>
+                </div>
+                <div class="col-auto text-right float-right
+                    ml-auto">
+                    <a href="#" class="btn btn-outline-primary
+                        mr-2"><i class="fas fa-download"></i>
+                        Download</a>
+                    <a href="add-teacher.html" class="btn
+                        btn-primary"><i class="fas fa-plus"></i></a>
+                </div>
+                
+            </div>
+        </div>
+        {% include "msg.html" %}
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card card-table">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover
+                                table-center mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Course Name</th>
+                                        <th>First Point</th>
+                                        <th class="text-right">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for i in whats_learn %}
+                                      
+                                    <tr>
+                                        <td>{{i.course.title_1}}</td>
+                                        <td>{{i.pont1}}</td>
+                                        <td class="text-right">
+                                            <div class="actions">
+                                                <a
+                                                    href="{% url 'updated_wahts_learn' id=i.id %}"
+                                                    class="btn
+                                                    btn-sm
+                                                    bg-success-light
+                                                    mr-2">
+                                                    <i class="fas
+                                                        fa-pen"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+{% endblock body %}

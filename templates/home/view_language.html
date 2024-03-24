@@ -1,0 +1,66 @@
+{% extends "Dashbord/base.html" %}
+{% load static %}
+{% block tile %}
+  Teachers List
+{% endblock tile %}
+
+{% block body %}
+<div class="page-wrapper">
+    <div class="content container-fluid">
+
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title">Language</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a
+                                href="{% url 'hod:hod_dashbord' %}">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Language</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% include "msg.html" %}
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card card-table">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover
+                                table-center mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Language Name</th>
+                                        <th class="text-right">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for i in languages %}
+                                      
+                                    <tr>
+                                        <td>{{i.languege_name}}</td>
+                                        <td class="text-right">
+                                            <div class="actions">
+                                                <a href="{% url 'delete_language' id=i.id%}"
+                                                    class="btn
+                                                    btn-sm
+                                                    bg-danger-light">
+                                                    <i class="fas
+                                                        fa-trash"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+{% endblock body %}

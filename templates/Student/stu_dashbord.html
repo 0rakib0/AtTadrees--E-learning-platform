@@ -1,0 +1,65 @@
+{% extends "Student/base.html" %}
+{% block body %}
+<section class="teachers">
+ 
+    <div class="box-container">
+ 
+       
+ 
+       <div class="box">
+          <div class="tutor">
+             <div style="text-align: center;">
+                <h3>TOTALL COURSE</h3>
+                <span> <b>{{course_count}}+</b></span>
+             </div>
+          </div>
+       </div>
+ 
+       <div class="box">
+        <div class="tutor">
+            <div style="text-align: center;">
+               <h3>TOTALL TEACHER</h3>
+               <span> <b>{{teacher_count}}+</b></span>
+            </div>
+         </div>
+       </div>
+ 
+       <div class="box">
+        <div class="tutor">
+            <div style="text-align: center;">
+               <h3>TOTALL ADVISER</h3>
+               <span> <b>{{advisor_count}}+</b></span>
+            </div>
+         </div>
+       </div>
+ 
+       <div class="box">
+        <div class="tutor">
+            <div style="text-align: center;">
+               <h3>TOTALL BOOK</h3>
+               <span> <b>{{books_count}}+</b></span>
+            </div>
+         </div>
+       </div>
+ 
+       <div class="box">
+        <div class="tutor">
+            <div style="text-align: center;">
+               <h3>YOUR COURSE</h3>
+               <span> <b>{{user_course_count}}</b></span>
+            </div>
+         </div>
+       </div>
+       <div class="box">
+         <div class="tutor">
+             <div style="text-align: center;">
+                <h3>YOUR ORDER BOOK</h3>
+                <span> <b>{{user_book_count}}</b></span>
+             </div>
+          </div>
+        </div>
+    </div>
+ 
+ </section>
+
+{% endblock body %}

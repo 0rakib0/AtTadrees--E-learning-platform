@@ -1,0 +1,85 @@
+{% extends "Dashbord/base.html" %}
+{% block title %}
+  Add Teacher
+{% endblock%}
+
+{% block body %}
+<div class="page-wrapper">
+    <div class="content container-fluid">
+
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title">Add Book</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a
+                                href="teachers.html">Book</a></li>
+                        <li class="breadcrumb-item active">Add
+                            Book</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% include "msg.html" %}
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5 class="form-title"><span>Basic
+                                            Details</span></h5>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label> Book Name</label>
+                                        <input type="text" name="book_name" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Writer Name</label>
+                                        <input type="text" name="writer_name" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Regular Price</label>
+                                        <input type="number" name="regular_price" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Discount Price</label>
+                                        <input type="number" value="0" name="discount_price" class="form-control">
+                                    </div>
+                                </div>                               
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Picture</label>
+                                        <input type="file"
+                                            name="pic"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-12">
+                                    <span>Description</span>
+                                    <div class="form-group">
+                                        <textarea name="description" id="" cols="40" rows="5"></textarea>
+                                    </div>
+                                </div> 
+                                <div class="col-12">
+                                    <button type="submit" class="btn
+                                        btn-primary">Add Book</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

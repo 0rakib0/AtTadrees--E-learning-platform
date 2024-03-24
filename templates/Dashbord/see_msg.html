@@ -1,0 +1,24 @@
+{% extends "Dashbord/base.html" %}
+{% load static %}
+{% block tile %}
+Contact Info
+{% endblock tile %}
+
+{% block body %}
+<div class="page-wrapper">
+    <div class="content container-fluid mt-5">
+
+        <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Name: {{contact.name}}</h5>
+              <h5 class="card-title">Email: {{contact.email}}</h5>
+              <h5 class="card-title">Message:</h5>
+
+              <p class="card-text">{{contact.message}}</p>
+            </div>
+          </div>
+        
+    </div>
+
+</div>
+{% endblock body %}

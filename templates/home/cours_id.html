@@ -1,0 +1,45 @@
+{% extends "Dashbord/base.html" %}
+{% block title %}
+  add-course-video
+{% endblock%}
+
+
+{% block body %}
+<div class="page-wrapper">
+    <div class="content container-fluid">
+        {% include "msg.html" %}
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="GET" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5 class="form-title"><span>Select Course Where want to add Video</span></h5>
+                                </div>
+                                <div class="col-12 col-sm-12">
+                                    <div class="form-group">
+                                        <label>Select Course</label>
+                                        <select
+                                            name="course_id"
+                                            class="form-control">
+                                            {% for i in course %}
+                                            <option value="{{i.id}}">{{i.title_1}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn
+                                        btn-primary">Next</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

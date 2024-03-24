@@ -1,0 +1,17 @@
+{% extends "Student/base.html" %}
+{% load static %}
+{% block body %}
+
+<section class="form-container">
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+       <h3>Review/Rating Us</h3>
+       <p>Review <span>*</span></p>
+       <textarea name="review" id="" style="border: 1px solid black;padding: 10px ;" cols="55" rows="10"></textarea>
+       <input type="submit" value="Submit Your Review" name="submit" class="btn">
+    </form>
+ 
+ </section>
+
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends "Dashbord/base.html" %}
+{% block title %}
+  Add Teacher
+{% endblock%}
+
+{% block body %}
+<div class="page-wrapper">
+    <div class="content container-fluid">
+
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title">Whats Leanr From This Course</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a
+                                href="teachers.html">Filup atlist 3 field</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% include "msg.html" %}
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5 class="form-title"><span>Fill Atlist 3 field!</span></h5>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Course (Not changeable)</label>
+                                        <select
+                                            name="course_id"
+                                            class="form-control">
+                                            <option selected>{{whats_leanr.course.title_1}}</option>                                        
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label> Point1</label>
+                                        <input type="text" name="point1" value="{{whats_leanr.pont1}}" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label> Point2</label>
+                                        <input type="text" name="point2" value="{{whats_leanr.pont2}}" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label> Point3</label>
+                                        <input type="text" name="point3" value="{{whats_leanr.pont3}}" class="form-control" required>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label> Point4</label>
+                                        <input type="text" name="point4" value="{{whats_leanr.pont4}}" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label> Point5</label>
+                                        <input type="text" name="point5" value="{{whats_leanr.pont5}}" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label> Point6</label>
+                                        <input type="text" name="point6" value="{{whats_leanr.pont6}}" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label> Point7</label>
+                                        <input type="text" name="point7" value="{{whats_leanr.pont7}}" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn
+                                        btn-primary">Update</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

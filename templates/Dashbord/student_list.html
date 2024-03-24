@@ -1,0 +1,103 @@
+{% extends "Dashbord/base.html" %}
+{% load static %}
+{% block tile %}
+  Teachers List
+{% endblock tile %}
+
+{% block body %}
+<div class="page-wrapper">
+    <div class="content container-fluid">
+
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title">Students</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a
+                                href="{% url 'hod:hod_dashbord' %}">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Student List</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% include "msg.html" %}
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card card-table">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover
+                                table-center mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th class="text-right">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for i in student %}
+                                      
+                                    <tr>
+                                        <td>
+                                            <h2
+                                                class="table-avatar">
+                                                <a
+                                                    href="#"
+                                                    class="avatar
+                                                    avatar-sm mr-2">
+                                                    
+                                                    {% if i.profile_pic %}
+                                                    <img
+                                                        class="avatar-img
+                                                        rounded-circle"
+                                                        src="/media/{{i.profile_pic}}"
+                                                        alt="User
+                                                        Image">
+                                                    {% else %}
+                                                        <img
+                                                        class="avatar-img
+                                                        rounded-circle"
+                                                        src="{% static 'demo_profile.jpg' %}"
+                                                        alt="User
+                                                        Image">
+                                                    {% endif %}
+                                                    </a>
+                                                <a
+                                                    href="#">{{i.first_name}} {{i.last_name}}</a>
+                                            </h2>
+                                        </td>
+                                        <td>{{i.email}}</td>
+                                        <td class="text-right">
+                                            <div class="actions">
+                                                <a
+                                                    href=""
+                                                    class="btn
+                                                    btn-sm
+                                                    bg-success-light
+                                                    mr-2">
+                                                    <i class="fas
+                                                        fa-pen"></i>
+                                                </a>
+                                                <a href=""
+                                                    class="btn
+                                                    btn-sm
+                                                    bg-danger-light">
+                                                    <i class="fas
+                                                        fa-trash"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock body %}

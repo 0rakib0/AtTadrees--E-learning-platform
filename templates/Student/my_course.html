@@ -1,0 +1,35 @@
+{% extends "Student/base.html" %}
+{% load static %}
+{% block body %}
+
+
+<section class="courses">
+
+    <h1 class="heading">My Course</h1>
+ 
+    <div class="box-container">
+ 
+
+    {% for i in my_courses %}
+       <div class="box">
+          <div class="tutor">
+             
+             <div class="info">
+                <h3>Enroll Date:</h3>
+                <span>{{i.date}}</span>
+             </div>
+          </div>
+          <div class="thumb">
+             <img src="/media/{{i.course.course_image}}" alt="course_image">
+             <span>{{i.course.cls_video.count}} videos</span>
+          </div>
+          <h3 class="title">{{i.course.title_1}}</h3>
+          <a href="{% url 'student:video_plylist' slug=i.course.slug %}" class="inline-btn">Video Playlist</a>
+       </div>
+    {% endfor %}
+ 
+    </div>
+ 
+ </section>
+
+{% endblock %}

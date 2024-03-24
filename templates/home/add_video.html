@@ -1,0 +1,112 @@
+{% extends "Dashbord/base.html" %}
+{% block title %}
+  add-course-video
+{% endblock%}
+
+
+{% block body %}
+<div class="page-wrapper">
+    <div class="content container-fluid">
+
+        <div class="page-header">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3 class="page-title rakib">Add Video</h3>
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a
+                                href="teachers.html">Adviser</a></li>
+                        <li class="breadcrumb-item active">Add
+                            Video</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% include "msg.html" %}
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-body">
+                        <form method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5 class="form-title"><span>Basic
+                                            Details</span></h5>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label> Seriar Number</label>
+                                        <input type="number" name="serial_number" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Thumbnail Picture</label>
+                                        <input type="file" name="thumbnail" class="form-control">
+                                    </div>
+                                </div>                               
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Video Title</label>
+                                        <input type="text"
+                                            name="title"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Youtube ID</label>
+                                        <input type="text"
+                                            name="youtube_id"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Time Duration</label>
+                                        <input type="number"
+                                            name="time_duration"
+                                            class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-sm-6">
+                                    <div class="form-group">
+                                        <label>Course</label>
+                                        <select
+                                            id="CourseID"
+                                            name="course_id"
+                                            class="form-control">
+                                            <option value="{{course.id}}">{{course.title_1}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 col-sm-12">
+                                    <div class="form-group">
+                                        <label>Lesson</label>
+                                        <select id="LessonID" name="lessone_id" class="form-control">
+                                            {% for i in lesson %}
+                                            <option value="{{i.id}}">{{i.name}}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-check mb-3 ml-3">
+                                    <input type="checkbox" value="True" name="is_preview" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Preview Video</label>
+                                  </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn
+                                        btn-primary">Add Video</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

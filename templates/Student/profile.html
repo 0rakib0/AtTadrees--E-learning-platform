@@ -1,0 +1,43 @@
+{% extends "Student/base.html" %}
+{% load static %}
+{% block body %}
+<section class="user-profile">
+
+    <h1 class="heading">your profile</h1>
+    <div class="info">
+         
+       <div class="user">
+         {% if user.profile_pic %}
+         <img src="\media\{{user.profile_pic}}" class="image" alt="">
+         {% else %}
+         <img src="{% static 'demo_profile.jpg' %}" class="image" alt="">
+         {% endif %}
+          <h3>{{user.first_name}} {{user.last_name}}</h3>
+          <p>student</p>
+       </div>
+    </div>
+ 
+ </section>
+
+ <section class="form-container">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+       <h3>update profile</h3>
+        {% include "msg.html" %}
+       <p>First name</p>
+       <input type="text" name="first_name" value="{{user.first_name}}" maxlength="50" class="box">
+       <p>Last name</p>
+       <input type="text" name="last_name" value="{{user.last_name}}" maxlength="50" class="box">
+       <p>Email</p>
+       <input type="email" name="email" value="{{user.email}}" readonly maxlength="50" class="box">
+       <p>Password</p>
+       <input type="password" name="password" placeholder="enter your password if you want change" maxlength="20" class="box">
+       <p>update pic</p>
+       <img src="\media\{{user.profile_pic}}" width="50px" alt="">
+       <input type="file" accept="image/*" name="profile_pic" class="box">
+       <input type="submit" value="update profile" name="submit" class="btn">
+    </form>
+ 
+ </section>
+ 
+{% endblock body %}

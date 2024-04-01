@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
-STATIC_DIR = os.path.join(BASE_DIR, 'static')
 MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 
 
@@ -26,9 +25,9 @@ MEDIA_DIR = os.path.join(BASE_DIR, 'media')
 SECRET_KEY = 'django-insecure-tvdmgpw1mv)9n^sd1+nac2if$luvm0xic3c8^(3kh8u8+e=ap2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app','now.sh','127.0.0.1','localhost']
 
 
 # Application definition
@@ -82,10 +81,22 @@ AUTH_USER_MODEL = 'Accounts.User'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'ilqtmPdHzoVZhRyBsLKwHEhMKpopUneJ',
+        'HOST': 'monorail.proxy.rlwy.net',
+        'PORT': '46297',
     }
 }
 
@@ -124,15 +135,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
-# STATIC_ROOT = '/static/'
-STATICFILES_DIRS = [ STATIC_DIR ]
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR /"staticfiles_build"
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+
 
 
 LOGIN_URL = '/login/'
 
-MEDIA_URL = 'media/'
-MEDIA_ROOT = MEDIA_DIR
+MEDIA_ROOT  = MEDIA_DIR
+MEDIA_URL = '/media/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 

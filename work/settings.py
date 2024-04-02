@@ -153,18 +153,18 @@ LOGIN_URL = '/login/'
 
 # =====================> aamarpay payment method intergation <============
 
-AAMARPAY_SETTINGS = {
-    'store_id': 'aamarpaytest',
-    'signature_key': 'dbb74894e82415a2f7ff0ec3a97e4183',
-    'sandbox_mode': True,  # Set to False in production
-}
+# AAMARPAY_SETTINGS = {
+#     'store_id': 'aamarpaytest',
+#     'signature_key': 'dbb74894e82415a2f7ff0ec3a97e4183',
+#     'sandbox_mode': True,  # Set to False in production
+# }
 
-AAMARPAY_PAYMENT_URL = 'https://sandbox.aamarpay.com/request.php'
-AAMARPAY_GATEWAY_URL = 'https://sandbox.aamarpay.com/payment.php'
+# AAMARPAY_PAYMENT_URL = 'https://sandbox.aamarpay.com/request.php'
+# AAMARPAY_GATEWAY_URL = 'https://sandbox.aamarpay.com/payment.php'
 
-AAMARPAY_SUCCESS_URL = '/index/'
-AAMARPAY_FAIL_URL = '/index/'
+# AAMARPAY_SUCCESS_URL = '/index/'
+# AAMARPAY_FAIL_URL = '/index/'
 
 
-CLEANUP_PREVENT_DELETE_FILE = False
+# CLEANUP_PREVENT_DELETE_FILE = False
 

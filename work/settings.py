@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+import cloudinary_storage
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
     'Student_app',
     'Teacher_app',
     'django_cleanup',
+    'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -148,6 +150,17 @@ STATIC_ROOT = BASE_DIR /"staticfiles_build"
 
 MEDIA_ROOT  = MEDIA_DIR
 MEDIA_URL = '/media/'
+
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dquqayzba',
+    'API_KEY': '138712985671313',
+    'API_SECRET': '541phSaosQMhCsumsA2ijh2zZYc'
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 

@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
-import cloudinary_storage
+# import cloudinary_storage
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'Student_app',
     'Teacher_app',
     'django_cleanup',
-    'cloudinary_storage',
+    # 'cloudinary_storage',
 ]
 
 MIDDLEWARE = [
@@ -154,12 +154,12 @@ MEDIA_ROOT  = MEDIA_DIR
 MEDIA_URL = '/media/'
 
 
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dquqayzba',
-    'API_KEY': '138712985671313',
-    'API_SECRET': '541phSaosQMhCsumsA2ijh2zZYc'
-}
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+# CLOUDINARY_STORAGE = {
+#     'CLOUD_NAME': 'dquqayzba',
+#     'API_KEY': '138712985671313',
+#     'API_SECRET': '541phSaosQMhCsumsA2ijh2zZYc'
+# }
+# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 
